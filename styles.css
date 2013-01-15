@@ -15,3 +15,12 @@ a {
 .breadcrumb, .nav {
   font-size: 20px;
 }
+
+.colours p {
+  text-align: center;
+  font-size: 30px; padding: 20px; margin-bottom: 20px;
+}
+
+.colours span {
+  margin: 0 10px;
+}
