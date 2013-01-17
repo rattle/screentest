@@ -39,3 +39,27 @@ a {
   font-size: 150px;
   text-align: center;
 }
+
+#animation {
+  width: 100%;
+}
+
+.sun {
+  fill: #DDD;
+}
+
+.ring {
+  fill: #666;
+}
+
+.planet1 {
+  fill: #C40233;
+}
+
+.planet2 {
+  fill: #FFD300;
+}
+
+.planet3 {
+  fill: #0087BD;
+}
