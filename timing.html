@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Test</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="home">
+
+    <p class="breadcrumb"><a href="./">Home</a> / Timing</p>
+
+    <p class="time" id="time">LOADING TIME</p>
+
+    <script>
+
+      function zeroPad(number) {
+
+        var string = number.toString();
+        if (string.length < 2) {
+          string = '0' + string;
+        }
+
+        return string;
+      }
+
+      function updateTime() {
+
+        var time_element = document.getElementById('time');
+        var time_now = new Date();
+
+        var time_string = zeroPad(time_now.getHours()) + ':' + zeroPad(time_now.getMinutes()) + ':' + zeroPad(time_now.getSeconds());
+
+        time_element.innerHTML = time_string;
+      }
+
+      window.onload = function() {
+        setInterval(function() {
+          updateTime();
+        }, 1000);
+      }
+
+    </script>
+
+  </body>
+</html>

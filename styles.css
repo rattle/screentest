@@ -34,3 +34,8 @@ a {
   fill: #009F6B;
   stroke: #CCC;
 }
+
+.time {
+  font-size: 150px;
+  text-align: center;
+}
