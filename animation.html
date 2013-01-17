@@ -16,8 +16,8 @@
     <script type="text/javascript" src="d3.v3.min.js"></script>
     <script type="text/javascript">
 
-    var w = 1280,
-        h = 800,
+    var w = 1000,
+        h = 1000,
         r = 80,
         x = Math.sin(2 * Math.PI / 3),
         y = Math.cos(2 * Math.PI / 3),
@@ -26,7 +26,7 @@
 
     var svg = d3.select("body").insert("svg:svg")
       .attr("id", 'animation')
-      .attr('viewBox', "0 0 1280 800")
+      .attr('viewBox', "0 0 1000 1000")
       .append("svg:g")
       .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")scale(.9)")
       .append("svg:g")
