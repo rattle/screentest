@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Test</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="home">
+
+    <p class="breadcrumb"><a href="./">Home</a> / Web Access</p>
+
+    <div id="story"></div>
+
+    <script>
+
+      var rss_url = 'http://evening-garden-3589.herokuapp.com/'
+
+      function getNews() {
+        var request = new XMLHttpRequest();
+        request.open('GET', rss_url , false);
+        request.send();
+        if (request.status === 200) {
+          var data = JSON.parse(request.responseText);
+
+          var story_element = document.getElementById('story');
+
+          var now = new Date()
+          var time = Date.parse(data['time']);
+
+          var time_ago = parseInt((now - time) / 60000) + ' mins ago';
+
+          story.innerHTML = '<div class="time_ago">' + time_ago + '</div><div class="headline">' + data['title'] + '</div><div class="description">' + data['description'] + '</div>';
+
+          setTimeout(getNews, 30000);
+        } else {
+
+          var story_element = document.getElementById('story');
+          story_element.innerHTML = 'ERROR';
+
+        }
+
+      }
+
+
+      window.onload = function() {
+        getNews();
+      }
+
+    </script>
+
+  </body>
+</html>

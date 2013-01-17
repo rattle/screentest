@@ -63,3 +63,27 @@ a {
 .planet3 {
   fill: #0087BD;
 }
+
+#story .time_ago {
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+}
+
+
+#story .headline {
+  font-size: 65px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#story .description {
+  font-size: 50px;
+  margin: 40px auto 0 auto;
+  display: block;
+  text-align: left;
+  width: 800px;
+}
