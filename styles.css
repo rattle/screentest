@@ -24,3 +24,13 @@ a {
 .colours span, .examples span {
   margin: 0 10px;
 }
+
+.shapes svg {
+  margin: 0 auto;
+  display: block;
+}
+
+.shapes .rectangle {
+  fill: #009F6B;
+  stroke: #CCC;
+}
