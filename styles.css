@@ -87,3 +87,9 @@ a {
   text-align: left;
   width: 800px;
 }
+
+#status {
+  text-align: center;
+  color: #555;
+  margin-top: 50px;
+}
