@@ -17,12 +17,13 @@
 
     <script>
 
+
 			function addResult(method_name, result) {
 			
 				var js_results = document.getElementById('js-results');
 				
 				var result_div = document.createElement('div');
-				result_div.setAttribute('result');
+				result_div.setAttribute('class', 'result');
 				
 				var method_element = document.createElement('span');
 				method_element.textContent = method_name;
@@ -43,7 +44,7 @@
 				result_div.appendChild(result_element);
 				js_results.appendChild(result_div);
 			
-			}
+			};
 			
 			addResult('FAIL', window.thisIsMeantToFail);
 
@@ -81,7 +82,7 @@
 			addResult('.bind', f.bind);
 			addResult('.prototype', f.prototype);
 
-			var e = document.createElement()
+			var e = document.createElement('x')
 
 			addResult('.attributes', e.attributes);
 			addResult('.getAttribute', e.getAttribute);
@@ -115,10 +116,6 @@
 			addResult('Date.setSeconds', d.setSeconds);
 			addResult('Date.setMilliseconds', d.setMilliseconds);
 
-
-
-
-			
 
     </script>
 
