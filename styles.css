@@ -93,3 +93,21 @@ a {
   color: #555;
   margin-top: 50px;
 }
+
+#js-results {
+	column-count: 3;
+	-webkit-column-count: 3;
+
+}
+
+#js-results .method {
+	margin-right: 1em;
+}
+
+.fail {
+	color: red;
+}
+
+.pass {
+	color: green;
+}
