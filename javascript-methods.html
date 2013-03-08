@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Test</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="home">
+
+    <p class="breadcrumb"><a href="./">Home</a> / Javascript Methods</p>
+
+		<div id="js-results"></div>
+
+    <script>
+
+			function addResult(method_name, result) {
+			
+				var js_results = document.getElementById('js-results');
+				
+				var result_div = document.createElement('div');
+				result_div.setAttribute('result');
+				
+				var method_element = document.createElement('span');
+				method_element.textContent = method_name;
+				method_element.setAttribute('class', 'method');
+
+				var result_element = document.createElement('span');
+				
+				if (result != undefined) {
+					result_element.textContent = "PASS";
+					result_element.setAttribute('class', 'pass');
+				} else {
+					result_element.textContent = "FAIL";
+					result_element.setAttribute('class', 'fail');
+				}
+				
+				result_div.appendChild(method_element);
+				result_div.appendChild(document.createTextNode(' ' ));
+				result_div.appendChild(result_element);
+				js_results.appendChild(result_div);
+			
+			}
+			
+			addResult('FAIL', window.thisIsMeantToFail);
+
+			addResult('document.body', document.body);
+
+			addResult('getElementById', document.getElementById);
+			addResult('getElementsByClassName', document.getElementsByClassName);
+			addResult('getElementsByTagName', document.getElementsByTagName);
+			addResult('getSelection', document.getSelection);
+			addResult('querySelector', document.querySelector);
+
+
+			addResult('Math.round', Math.round);
+			addResult('Math.random', Math.random);
+
+			var n = 10;
+			addResult('.toString', n.toString);
+
+			var s = '';
+			
+			addResult('.length', s.length);
+			addResult('.match', s.match);
+			addResult('.replace', s.replace);
+			addResult('.split', s.split);
+			addResult('.slice', s.slice);
+
+
+			addResult('setTimeout', window.setTimeout);
+			addResult('setInterval', window.setInterval);
+			addResult('addEventListener', addEventListener);
+			addResult('XMLHttpRequest', window.XMLHttpRequest);
+
+			var f = function() {};
+			
+			addResult('.bind', f.bind);
+			addResult('.prototype', f.prototype);
+
+			var e = document.createElement()
+
+			addResult('.attributes', e.attributes);
+			addResult('.getAttribute', e.getAttribute);
+			addResult('.setAttribute', e.setAttribute);
+			addResult('.innerHTML', e.innerHTML);
+			addResult('.innerText', e.innerText);
+			addResult('.textContent', e.textContent);
+			addResult('.appendChild', e.appendChild);
+			addResult('.removeChild', e.removeChild);
+			addResult('.replaceChild', e.replaceChild);
+			addResult('.cloneNode', e.cloneNode);
+
+			addResult('.classList', e.classList);
+			addResult('.classList.add', e.classList && e.classList.add);
+			addResult('.classList.remove', e.classList && e.classList.remove);
+
+			addResult('Date.valueOf', Date.valueOf);
+			
+			var d = new Date();
+			addResult('Date.getFullYear', d.getFullYear);
+			addResult('Date.getMonth', d.getMonth);
+			addResult('Date.getDay', d.getDay);
+
+			addResult('Date.getHours', d.getHours);
+			addResult('Date.getHours', d.getHours);
+			addResult('Date.getMinutes', d.getMinutes);
+			addResult('Date.getSeconds', d.getSeconds);
+			addResult('Date.getMilliseconds', d.getMilliseconds);
+			addResult('Date.setHours', d.setHours);
+			addResult('Date.setMinutes', d.setMinutes);
+			addResult('Date.setSeconds', d.setSeconds);
+			addResult('Date.setMilliseconds', d.setMilliseconds);
+
+
+
+
+			
+
+    </script>
+
+
+  </body>
+</html>
