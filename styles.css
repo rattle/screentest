@@ -1,0 +1,95 @@
+body {
+  background-color: #333; color: #EEE;
+  font-family: 'Gill Sans', Helvetica, Arial, sans-serif;
+  padding: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #BBB; text-decoration: none;
+}
+
+.breadcrumb, .nav {
+  font-size: 20px;
+}
+
+.colours p, .examples p {
+  text-align: center;
+  font-size: 30px; padding: 20px; margin-bottom: 20px;
+}
+
+.colours span, .examples span {
+  margin: 0 10px;
+}
+
+.shapes svg {
+  margin: 0 auto;
+  display: block;
+}
+
+.shapes .rectangle {
+  fill: #009F6B;
+  stroke: #CCC;
+}
+
+.time {
+  font-size: 150px;
+  text-align: center;
+}
+
+#animation {
+  width: 100%;
+}
+
+.sun {
+  fill: #DDD;
+}
+
+.ring {
+  fill: #666;
+}
+
+.planet1 {
+  fill: #C40233;
+}
+
+.planet2 {
+  fill: #FFD300;
+}
+
+.planet3 {
+  fill: #0087BD;
+}
+
+#story .time_ago {
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+}
+
+
+#story .headline {
+  font-size: 65px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#story .description {
+  font-size: 50px;
+  margin: 40px auto 0 auto;
+  display: block;
+  text-align: left;
+  width: 800px;
+}
+
+#status {
+  text-align: center;
+  color: #555;
+  margin-top: 50px;
+}

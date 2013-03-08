@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Test</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="home">
+
+    <p class="breadcrumb"><a href="./">Home</a> / Web Access</p>
+
+    <div id="story"></div>
+
+    <p id="status">LOADING</p>
+
+    <script>
+
+      var rss_url = 'http://evening-garden-3589.herokuapp.com/'
+      var next_request_due = false;
+      var status_update_interval_id = false;
+      var request_frequency = 30000;
+
+      function updateStatus(message) {
+        document.getElementById('status').innerHTML = message;
+      }
+
+      function handleRequestStateChange() {
+
+      }
+
+      function updateDueStatus() {
+        var next_update_time = parseInt((next_request_due - Date.now()) / 1000);
+        updateStatus('Next update in ' + next_update_time + ' seconds');
+      }
+
+      function getNews() {
+        updateStatus('Fetching news');
+
+        if (status_update_interval_id) { clearInterval(status_update_interval_id) };
+
+        var request = new XMLHttpRequest();
+        request.open('GET', rss_url);
+        request.send();
+
+        request.onreadystatechange = function() {
+          if (request.readyState === 4 && request.status === 200) {
+            updateStatus('Received data');
+            var data = JSON.parse(request.responseText);
+
+            var story_element = document.getElementById('story');
+
+            var now = new Date()
+            var time = Date.parse(data['time']);
+
+            var time_ago = parseInt((now - time) / 60000) + ' mins ago';
+
+            story.innerHTML = '<div class="time_ago">' + time_ago + '</div><div class="headline">' + data['title'] + '</div><div class="description">' + data['description'] + '</div>';
+
+            next_request_due = Date.now() + request_frequency;
+            status_update_interval_id = setInterval(updateDueStatus, 1000);
+            setTimeout(getNews, request_frequency);
+
+          } else {
+
+            var story_element = document.getElementById('story');
+            story_element.innerHTML = request.responseCode;
+
+          }
+        };
+
+      }
+
+
+      window.onload = function() {
+        getNews();
+      }
+
+    </script>
+
+  </body>
+</html>
